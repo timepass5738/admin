@@ -1,0 +1,48 @@
+Pract 3A
+
+Roll No.              |______________|
+Student Name          |______________|
+Class:                |______________|
+Course Nae:           |BSC__________>|
+
+		      Submit
+Label 5
+
+
+Code:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace ServerControls
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ }
+ protected void Button1_Click(object sender, EventArgs e)
+ {
+ String s;
+ if (RadioButton1.Checked == true)
+ {
+ s = RadioButton1.Text;
+ }
+ else if (RadioButton2.Checked == true)
+ {
+ s = RadioButton2.Text;
+ }
+ else
+ {
+ s = RadioButton3.Text;
+ }
+ Label5.Text += "in " + s;
+ }
+ protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+ {
+ Label5.Text = " You have been enrolled in " + DropDownList1.SelectedItem;
+ }
+ }
+}

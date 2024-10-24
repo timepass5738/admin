@@ -1,0 +1,45 @@
+Ptact 2B
+ENter No. 1 |_______________|
+ENter No. 2 |_______________|
+
+Cofe:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace P2B
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ public delegate int Calculation(int a, int b);
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ }
+ protected void Button1_Click(object sender, EventArgs e)
+ {
+ int num1 = Convert.ToInt32(TextBox1.Text);
+ int num2 = int.Parse(TextBox2.Text);
+ Calculation cal = Add;
+ int addition = cal(num1, num2);
+ Label3.Text = "Addition: " + addition.ToString();
+ }
+ protected void Button2_Click(object sender, EventArgs e)
+ {
+ int num1 = Convert.ToInt32(TextBox1.Text);
+ int num2 = int.Parse(TextBox2.Text);
+ Calculation cal = Sub;
+ int subtract = cal(num1, num2);
+ Label3.Text = "Subtraction: " + subtract.ToString();
+ }
+ public int Add(int a, int b)
+ {
+ return a + b;
+ }
+ public int Sub(int a, int b)
+ {
+ return a - b;
+ }
+ }
+}

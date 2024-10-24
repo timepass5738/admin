@@ -1,0 +1,65 @@
+Prcat 6a
+
+
+variuos chekbox and submit button and a label
+
+
+
+
+
+
+
+
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace CoockieTypes
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ HttpCookie C1 = new HttpCookie("Creator");
+ C1.Value = "TYIT";
+ Response.Cookies.Add(C1);
+ String author = Response.Cookies["Creator"].Value;
+ Label1.Text = author;
+ Response.Cookies["Computer"].Expires = DateTime.Now.AddDays(1);
+ }
+ protected void Button1_Click(object sender, EventArgs e)
+ {
+ Label3.Text = "";
+ if (CheckBox1.Checked)
+ Response.Cookies["Computer"]["Apple"] = "Apple";
+ if (CheckBox2.Checked)
+ Response.Cookies["Computer"]["Dell"] = "Dell";
+ if (CheckBox3.Checked)
+ Response.Cookies["Computer"]["Lenovo"] = "Lenovo";
+ if (CheckBox4.Checked)
+ Response.Cookies["Computer"]["Acer"] = "Acer";
+ if (CheckBox5.Checked)
+ Response.Cookies["Computer"]["Sony"] = "Sony";
+ if (CheckBox6.Checked)
+ Response.Cookies["Computer"]["Wipro"] = "Wipro";
+ if (Request.Cookies["Computer"].Values.ToString() != null)
+ {
+ if (Response.Cookies["Computer"]["Apple"] != null)
+ Label3.Text += Request.Cookies["Computer"]["Apple"] + " ";
+ if (Response.Cookies["Computer"]["Dell"] != null)
+ Label3.Text += Request.Cookies["Computer"]["Dell"] + " ";
+ if (Response.Cookies["Computer"]["Lenovo"] != null)
+ Label3.Text += Request.Cookies["Computer"]["Lenovo"] + " ";
+ if (Response.Cookies["Computer"]["Acer"] != null)
+ Label3.Text += Request.Cookies["Computer"]["Acer"] + " ";
+ if (Response.Cookies["Computer"]["Sony"] != null)
+ Label3.Text += Request.Cookies["Computer"]["Sony"] + " ";
+ if (Response.Cookies["Computer"]["Wipro"] != null)
+ Label3.Text += Request.Cookies["Computer"]["Wipro"] + " ";
+
+ else
+ Label3.Text = "Please select your choice";
+ Response.Cookies["Computer"].Expires = DateTime.Now.AddDays(1);
+ }
+ }
+ }
+}

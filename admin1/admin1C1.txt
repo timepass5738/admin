@@ -1,0 +1,36 @@
+Pract 1C.1
+Design:
+Enter No.  |_______|
+| Submit |
+
+Code:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls
+namespace pract1c
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ }
+ protected void Button1_Click(object sender, EventArgs e)
+ {
+ int num, n1 = 0, n2 = 1, n3, i;
+ num = Convert.ToInt32(TextBox1.Text);
+ Response.Write(n1 + "\t" + n2);
+ i = 0;
+ while (i <= num)
+ {
+ n3 = n1 + n2;
+ Response.Write("\t" + n3);
+ n1 = n2;
+ n2 = n3;
+ i++;
+ }
+ }
+ }
+}

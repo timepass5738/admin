@@ -1,0 +1,73 @@
+Pract 1A
+Design
+Enter No1 |_________|
+Enter No2 |_________|
+
+|Additon|  |Subtraction|  |Multiplication|  |Division|
+
+Code:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+public class Calculation
+{
+ public int a, b, ans;
+public void add()
+{
+ ans = a + b;
+}
+public void sub()
+{
+ ans = a - b;
+}
+public void multi()
+{
+ ans = a * b;
+}
+public void div()
+{
+ ans = a / b;
+}
+}
+namespace pract1AAA
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ Calculation c;
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ c = new Calculation();
+ }
+ protected void Button1_Click(object sender, EventArgs e)
+ {
+ c.a = Convert.ToInt32(TextBox1.Text);
+ c.b = Convert.ToInt32(TextBox2.Text);
+ c.add();
+ Label3.Text = c.ans.ToString();
+ }
+ protected void Button2_Click(object sender, EventArgs e)
+ {
+ c.a = Convert.ToInt32(TextBox1.Text);
+ c.b = Convert.ToInt32(TextBox2.Text);
+ c.sub();
+ Label3.Text = c.ans.ToString();
+ }
+ protected void Button3_Click(object sender, EventArgs e)
+ {
+ c.a = Convert.ToInt32(TextBox1.Text);
+ c.b = Convert.ToInt32(TextBox2.Text);
+ c.multi();
+ Label3.Text = c.ans.ToString();
+ }
+ protected void Button4_Click(object sender, EventArgs e)
+ {
+ c.a = Convert.ToInt32(TextBox1.Text);
+ c.b = Convert.ToInt32(TextBox2.Text);
+ c.div();
+ Label3.Text = c.ans.ToString();
+ }
+ }
+}

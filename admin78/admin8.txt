@@ -1,0 +1,35 @@
+Step 1:Add new Web form
+Step 2: Design
+in design take scrip manager then update panel in that take one
+button and label
+then outside update panel take one button and label
+step 3:Double click on both buttons
+code:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace p8
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ }
+ protected void Button1_Click(object sender, EventArgs e)
+ {
+ String time = DateTime.Now.ToLongTimeString();
+ Label1.Text = "Showing time form panel"+time;
+ Label2.Text= "Showing time form outside"+time;
+ }
+ protected void Button2_Click(object sender, EventArgs e)
+ {
+ String time = DateTime.Now.ToLongTimeString();
+ Label1.Text = "Showing time form panel" + time;
+ Label2.Text = "Showing time form outside" + time;
+ }
+ }
+}
+O

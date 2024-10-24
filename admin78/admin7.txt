@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace Exception_handling
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ try
+ {
+ throw new UserDefinedException("New user defined exception");
+ }
+ catch(Exception ex)
+ {
+ Label1.Text = "Exception caught here." + ex.ToString();
+ }
+ Label2.Text = "Final statement that is executed";
+ }
+ class UserDefinedException : Exception
+ {
+ public UserDefinedException(String str)
+ {
+ Console.WriteLine("User defined exception");
+ }
+ }
+ class HandleException
+ {
+ public static void main() { }
+ }
+ }
+}

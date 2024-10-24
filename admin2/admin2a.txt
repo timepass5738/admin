@@ -1,0 +1,35 @@
+Pract 2A
+
+| Boxing |    | Unboxing |
+
+|Label 1|
+
+
+Code:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+namespace p2A
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ }
+ protected void Button1_Click(object sender, EventArgs e)
+ {
+ int valueType = 45;
+ object boxed = valueType;
+ Label1.Text = "Boxing: Value type " + valueType + " is boxed into Object " + boxed;
+ }
+ protected void Button2_Click(object sender, EventArgs e)
+ {
+ object boxed = 20;
+ int valueType = (int)boxed;
+ Label1.Text = "Unboxing: Object " + boxed + " is Unboxed into valueType " + valueType;
+ }
+ }
+}

@@ -1,0 +1,44 @@
+Pract1B
+Deisgn: 
+ENter No.  |_____________|
+|Generate Floyds Triangle|
+
+Code:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+public class shape
+{
+ public int x, y, z;
+ public void getSide(int length, int breadth, int width)
+ {
+ x = length;
+ y = breadth;
+ z = width;
+ }
+}
+namespace P1b
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ }
+ protected void Button1_Click(object sender, EventArgs e)
+ {
+ int noOfRows, row, col, n = 1;
+ noOfRows = Convert.ToInt32(TextBox1.Text);
+ for (row = 1; row <= noOfRows; row++)
+ {
+ for (col = 1; col <= row; col++)
+ {
+ Response.Write(n++ + " ");
+ }
+ Response.Write("<br/>");
+ }
+ }
+ }
+}

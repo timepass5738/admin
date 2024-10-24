@@ -1,0 +1,63 @@
+Pract 2C
+Label1
+Label2
+
+Button
+
+
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+public class shape
+{
+ public int x, y, z;
+ public void getSide(int length, int breadth, int width)
+ {
+ x = length;
+ y = breadth;
+ z = width;
+ }
+}
+public interface IPolygon
+{
+ int calCulateArea();
+}
+public interface IVolume
+{
+ int getVolume();
+}
+class Rectangle : shape, IPolygon, IVolume
+{
+ public int calCulateArea()
+ {
+ return (x * y);
+ }
+ public int getVolume()
+ {
+ return (x * y * z);
+ }
+}
+namespace P2C
+{
+ public partial class WebForm1 : System.Web.UI.Page
+ {
+ protected void Page_Load(object sender, EventArgs e)
+ {
+ }
+ protected void Button1_Click(object sender, EventArgs e)
+ {
+ Rectangle r1 = new Rectangle();
+ int result;
+ r1.getSide(24, 67, 8);
+ result = r1.calCulateArea();
+ Label1.Text = "Area=" + result;
+ int c;
+ c = r1.getVolume();
+ Label2.Text = "Volume=" + c;
+ }
+ }
+}

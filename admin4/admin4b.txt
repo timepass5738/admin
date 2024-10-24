@@ -1,0 +1,19 @@
+Pract 4b
+
+<?xml version="1.0" encoding="utf-8" ?>
+<Advertisements>
+<Ad>
+<ImageUrl>download2.jpeg</ImageUrl>
+<NavigateUrl>https://www.flipkart.com/</NavigateUrl>
+<AlternateText>Flipkart.com</AlternateText>
+<Impressions>30</Impressions>
+<Keyword>Flipkart,Shopping</Keyword>
+</Ad>
+<Ad>
+<ImageUrl>download1.jpeg</ImageUrl>
+<NavigateUrl>https://www.nykaa.com/</NavigateUrl>
+<AlternateText>Nykaa.com</AlternateText>
+<Impressions>30</Impressions>
+<Keyword>Nykaa,Shopping,beauty products</Keyword>
+</Ad>
+</Advertisements>
